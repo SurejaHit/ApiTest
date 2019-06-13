@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         txt = (TextView) findViewById(R.id.txtBox);
         btn = (Button) findViewById(R.id.subbtn);
 
-        url = "https://reqres.in/api/users";
+        url = "https://reqres.in/api/users";        // Change this API url
         final RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 jsonObjectRequest = new JsonObjectRequest(
-                        Request.Method.POST, url,jsonObject, new Response.Listener<JSONObject>() {
+                        Request.Method.POST, url,jsonObject, new Response.Listener<JSONObject>() {     // For get method Request.Method.GET
+                    
                     @Override
                     public void onResponse(JSONObject response) {
                             str = response.toString();
